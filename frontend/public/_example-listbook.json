@@ -1,0 +1,63 @@
+{
+    "count": 7,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "1",
+            "title": "Love in town",
+            "author": "Anam Defori",
+            "language": "en",
+            "lastUpdate": "2023-04-23T18:25:43.511Z",
+            "img":"https://picsum.photos/500/400/?life"
+        },
+        {
+            "id": "2",
+            "title": "Never die",
+            "author": "Cela Kuelta",
+            "language": "es",
+            "lastUpdate": "2024-06-23T18:25:43.511Z",
+            "img":"https://picsum.photos/500/400/?book"
+        },
+        {
+            "id": "3",
+            "title": "La crise face à l'optimisme",
+            "author": "Sebastien Gerard",
+            "language": "fr",
+            "lastUpdate": "2024-02-23T18:25:43.511Z",
+            "img":"https://picsum.photos/500/400/?night"
+        },
+        {
+            "id": "4",
+            "title": "WWII in Africa",
+            "author": "Lina Duns",
+            "language": "de",
+            "lastUpdate": "2023-11-11T12:15:22.123Z",
+            "img":"https://picsum.photos/500/400/?call"
+        },
+        {
+            "id": "5",
+            "title": "Naruto : The dark river",
+            "author": "Ken Akuri",
+            "language": "jp",
+            "lastUpdate": "2022-08-19T09:45:33.789Z",
+            "img":"https://picsum.photos/500/300/?war"
+        },
+        {
+            "id": "6",
+            "title": "Pasta y tomato",
+            "author": "Olivia Martines",
+            "language": "it",
+            "lastUpdate": "2021-07-23T14:22:11.456Z",
+            "img":"https://picsum.photos/500/400/?master"
+        },
+        {
+            "id": "7",
+            "title": "International crimes",
+            "author": "Mark Wulduf",
+            "language": "ru",
+            "lastUpdate": "2020-05-13T10:30:45.654Z",
+            "img":"https://picsum.photos/500/300/?life"
+        }
+    ]
+}
