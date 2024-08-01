@@ -3,7 +3,8 @@ import Card from '../components/Card.jsx';
 
 
 function Home() {
-    const url = "./_example-listbook.json";
+    // const url = "./_example-listbook.json";
+    const url = "http://localhost:8000/api/book/";
 
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -13,8 +14,11 @@ function Home() {
         fetch(url)
           .then(response => {
             if(!response.ok){
-                console.log("No network response !");
+              if(response.status===404){
+                throw new Error ("Element not found !")
+              } else {
                 throw new Error("No network response !");
+              }
             }
             return response.json();
           })
@@ -23,11 +27,12 @@ function Home() {
             setLoading(false);
             console.log(data);
           })
-        //   .catch(error => {
-        //     setError(error);
-        //     setLoading(false);
-        //   })
-    })
+          .catch(error => {
+            console.error('Error fetching data:', error);
+            setError(error);
+            setLoading(false);
+          }, [])
+    }, [])
 
     if(loading) {
         return <div>Loading page ...</div>;
@@ -40,14 +45,16 @@ function Home() {
     return (
         <div className='flex flex-row 
          content-start justify-center flex-wrap
-         min-h-[calc(150vh)]
+         min-h-[calc(100vh)]
           '>
             {
-                data.results.map(book => (
-                    <Card title={book.title}
+                data.map(book => (
+                    <Card key= {book.id}
+                      id= {book.id}
+                      title={book.title}
                       author={book.author}
                       language={book.language}
-                      img={book.img} />
+                      img={`https://picsum.photos/500/400/?${book.id}`} />
                 ))
             }
         </div>
