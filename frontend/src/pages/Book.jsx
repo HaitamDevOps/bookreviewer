@@ -7,6 +7,8 @@ import {languageMap} from '../assets/languageMap';
 function Book(props) {
     const { id } = useParams();
     const url = "http://localhost:8000/api/book/"+id;
+    // const url = process.env.REACT_APP_API_URL + id || "http://localhost:8000/api/book/"+id;
+    // const url = process.env.REACT_APP_API_URL + id;
 
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);

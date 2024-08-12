@@ -3,8 +3,9 @@ import Card from '../components/Card.jsx';
 
 
 function Home() {
-    // const url = "./_example-listbook.json";
     const url = "http://localhost:8000/api/book/";
+    // const url = process.env.REACT_APP_API_URL || "http://localhost:8000/api/book/";
+    // const url = process.env.REACT_APP_API_URL;
 
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);

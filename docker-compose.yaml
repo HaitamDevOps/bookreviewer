@@ -1,0 +1,19 @@
+services:
+  backend:
+    image: bookreviewer-backend:1.0.0 
+    container_name: backend
+    hostname: backend
+    ports:
+      - 8000:8000
+
+  frontend:
+    image: bookreviewer-frontend:1.0.0
+    build: ./frontend
+    container_name: frontend
+    hostname: frontend
+    # environment:
+      # REACT_APP_API_URL : "http://192.168.1.18:8000/api/book/"
+    ports:
+      - 80:80
+    depends_on:
+      - backend
