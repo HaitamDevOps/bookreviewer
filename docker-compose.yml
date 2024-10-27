@@ -1,0 +1,14 @@
+services:
+  backend:
+    container_name: backend
+    image: bookreviewer-backend
+    ports:
+      - 8002:8000
+
+  frontend:
+    container_name: frontend
+    image: bookreviewer-frontend
+    ports:
+      - 3002:3000
+    depends_on:
+      - backend
