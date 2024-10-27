@@ -8,7 +8,7 @@ const app = async() => {
   try{
     const response = await AxiosInstance.get('/book');
     data = response.data;
-    // console.log(books);
+    // console.log(data);
     // console.log("Book id",books.id);
   } catch (err) {
     console.error("Error fetching data:", err);

@@ -11,6 +11,10 @@ COPY . .
 
 EXPOSE 3000
 
+<<<<<<< HEAD
 RUN npm run build
 
 CMD npm run start
+=======
+CMD ["npm", "run", "dev"]
+>>>>>>> 12971cd636769c866bdeaeb63b1051245616a5af
