@@ -9,7 +9,7 @@ function Navbar() {
                     <Image
                       height={30}
                       width={30}
-                      src={"logo.svg"}
+                      src={"/logo.svg"}
                       alt="Bookreviewer Logo"
                       style={{objectFit: "contain"}}
                     />
