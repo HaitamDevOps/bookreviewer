@@ -1,5 +1,6 @@
 // import { useEffect, useState } from "react";
 import Card from "@/components/Card";
+import Error from "@/components/Error";
 import AxiosInstance from "@/utils/AxiosInstance";
 
 const app = async() => {
@@ -8,15 +9,15 @@ const app = async() => {
   try{
     const response = await AxiosInstance.get('/book');
     data = response.data;
-    // console.log(data);
-    // console.log("Book id",books.id);
   } catch (err) {
     console.error("Error fetching data:", err);
     error = "An error occurred while fetching data. Details : "+err;
   }
 
   if (error) {
-    return <p style={{ color: 'red' , textAlign:'center' }}>{error}</p>;
+    return(
+      <Error error={error}/>
+    )
   }
 
   return (
@@ -32,16 +33,9 @@ const app = async() => {
         title= {book.title}
         author= {book.author}
         language= {book.language}
-        img={`https://picsum.photos/500/400/?dd`} />
-
+        img={book.coverUrl?book.coverUrl:"https://picsum.photos/500/400/?dd"} />
         ))
       }
-      {/* <Card id= {books.id}
-        title= {books.title}
-        author= {books.author}
-        language= {books.language}
-        img={`https://picsum.photos/500/400/?dd`} /> */}
-
     </div>
   );
 }

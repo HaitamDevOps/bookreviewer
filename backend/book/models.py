@@ -158,7 +158,9 @@ class Book(models.Model):
         default=ENGLISH
     )
     published_date = models.DateField()
-    overview = models.TimeField(null=True)
+    category = models.CharField(max_length=20, null=True)
+    coverUrl = models.CharField(max_length=255, null=True, blank=True)
+    overview = models.TextField(null=True)
     added = models.DateTimeField(auto_now_add=True)
     last_update = models.DateTimeField(auto_now=True)
 
