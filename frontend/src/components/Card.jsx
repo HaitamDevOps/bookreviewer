@@ -6,8 +6,10 @@ import { getLanguageByAbbreviation } from '@/utils/languageUtils';
 function Card(props) {
     return (
         <div className="relative m-4 flex w-full max-w-60 flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
-            <a className="relative mx-3 mt-3 flex h-52 overflow-hidden rounded-xl" href={`/book/${props.id}`}>
-                <img className="object-cover" src={props.img} alt="product image" />
+            <a className="relative mx-3 mt-3 flex h-52 overflow-hidden rounded-xl justify-center align-middle" href={`/book/${props.id}`}>
+                <img className="object-cover
+                 hover:scale-105 transition-all duration-300" 
+                 src={props.img} alt="product image" />
                 <span className="absolute top-0 left-0 m-2 rounded-full bg-red-600 px-2 text-center text-sm font-medium text-white">New</span>
                 <div className='absolute top-0 right-0 
                 flex flex-row items-center m-2 px-2
@@ -20,7 +22,7 @@ function Card(props) {
             </a>
             <div className="mt-2 px-5 pb-4 text-gray-800 text-center text-sm">
                 <a href={`/book/${props.id}`}>
-                    <h5 className="text-xl tracking-tight font-bold hover:text-amber-500">{capitalizeWords(props.title)}</h5>
+                    <h5 className="text-xl tracking-tight font-bold hover:text-amber-500">{capitalizeWords(props.title.substring(0, 25))}</h5>
                 </a>                  
                 <p className=''>by <a href="#" className="hover:text-amber-500">{capitalizeWords(props.author)}</a></p>
                 <p className='text-xs'>{getLanguageByAbbreviation(props.language.toUpperCase())}</p>

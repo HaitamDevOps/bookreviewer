@@ -13,7 +13,7 @@ class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 
-class CommentListCreate(views.APIView):
+class HandleCommentsView(views.APIView):
     def get(self, request):
         comment_id = request.query_params.get('id', None)
         book = request.query_params.get('book', None)

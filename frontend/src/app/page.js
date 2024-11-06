@@ -33,16 +33,9 @@ const app = async() => {
         title= {book.title}
         author= {book.author}
         language= {book.language}
-        img={`https://picsum.photos/500/400/?dd`} />
-
+        img={book.coverUrl?book.coverUrl:"https://picsum.photos/500/400/?dd"} />
         ))
       }
-      {/* <Card id= {books.id}
-        title= {books.title}
-        author= {books.author}
-        language= {books.language}
-        img={`https://picsum.photos/500/400/?dd`} /> */}
-
     </div>
   );
 }
